@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TestservicesService } from './testservices.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'front-end';
+  result = '';
+  constructor(
+    private _testservicesService: TestservicesService,
+  ) { }
+  test(){
+    this._testservicesService.test( ).subscribe((res) => {
+      debugger
+      this.result;
+    });
+  }
 }
